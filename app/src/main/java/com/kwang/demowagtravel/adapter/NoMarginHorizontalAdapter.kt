@@ -29,9 +29,6 @@ class NoMarginHorizontalAdapter(data: ArrayList<SingleNoMarginHorizontal>) : Rec
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        holder.description.text = data[position].desc
-        holder.title.text = data[position].title
-        holder.pubDate.text = data[position].pubDate
         holder.image.setImageResource(data[position].images)
     }
 
@@ -40,15 +37,9 @@ class NoMarginHorizontalAdapter(data: ArrayList<SingleNoMarginHorizontal>) : Rec
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        internal var title: TextView
-        internal var description: TextView
-        internal var pubDate: TextView
         internal var image: ImageView
 
         init {
-            title = itemView.findViewById<View>(R.id.title) as TextView
-            description = itemView.findViewById<View>(R.id.description) as TextView
-            pubDate = itemView.findViewById<View>(R.id.published_date) as TextView
             image = itemView.findViewById<View>(R.id.image_view) as ImageView
         }
     }
